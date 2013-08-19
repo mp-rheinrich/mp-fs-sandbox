@@ -4,3 +4,4 @@ https://github.com/phemmer/puppet-glusterfs.git
 https://github.com/enovance/puppet-ceph.git
 https://github.com/ceph/ceph-deploy.git
 https://github.com/ceph/autobuild-ceph.git
+https://github.com/zhurongze/puppet-ceph.git
