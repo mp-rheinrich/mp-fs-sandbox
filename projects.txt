@@ -2,3 +2,4 @@ https://github.com/semiosis/puppet-gluster.git
 https://github.com/thias/puppet-glusterfs.git
 https://github.com/phemmer/puppet-glusterfs.git
 https://github.com/enovance/puppet-ceph.git
+https://github.com/ceph/ceph-deploy.git
