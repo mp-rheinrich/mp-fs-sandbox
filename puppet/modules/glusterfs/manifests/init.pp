@@ -1,3 +1,20 @@
 class glusterfs{
-  file{"/tmp/test": }
+  include glusterfs::packages
 }
+
+
+class glusterfs::packages{
+  apt::ppa { 'ppa:semiosis/ubuntu-glusterfs-3.4': }
+}
+
+
+# class glusterfs::server{
+
+# }
+
+
+# class glusterfs::client{
+
+# }
+
+
