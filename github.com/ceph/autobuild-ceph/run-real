@@ -1,0 +1,84 @@
+#!/bin/sh
+set -e
+
+# use sun-java6
+export CPATH="$CPATH:/usr/lib/jvm/default-java/include:/usr/lib/jvm/default-java/include/linux"
+
+
+./autobuilder.sh
+
+REF_OUTDIR="out/output/ref"
+SHA_OUTDIR="out/output/sha1"
+
+mkdir -p $REF_OUTDIR
+mkdir -p $SHA_OUTDIR
+
+# clean up temp files from aborted runs of below symlinking; all tmp
+# files are stale
+find "$REF_OUTDIR" -mindepth 1 -maxdepth 1 -name '*.tmp' -print0 \
+| xargs -0 --no-run-if-empty rm -f --
+
+# update symlinks that make branch point to the latest successful
+# output dir for that branch
+install -d -m0755 -- "$REF_OUTDIR"
+( ./branches.sh ) \
+| while read REF; do
+    # mangle unsafe characters in branch names, just in case (slashes
+    # and leading periods); gitbuilder hanging on to "origin/" here
+    # makes the typical result a bit ugly
+    SAFE_REF="$(printf '%s' "$REF"|tr -c 'a-zA-Z0-9_.-' '_'|sed 's/^\./_/')"
+
+    # strip out the leading origin_ prefix on branches; this might cause
+    # collisions, but we're gonna ignore that for now
+    SAFE_REF="${SAFE_REF#origin_}"
+
+    SHA=`cd build && git rev-parse $REF`
+    echo "ref $SAFE_REF $SHA"
+
+    if [ -L "$REF_OUTDIR/$SAFE_REF" ]; then
+	# keep symlink fresh
+	touch --no-dereference "$REF_OUTDIR/$SAFE_REF"
+    else
+	if [ -e "out/pass/$SHA" ]; then
+	    # we did a successful build; make a new symlink.  this only
+	    # happens if we aborted somewhere before, though; the pass.sh
+	    # really should have done this!
+	    ln -s -- "../sha1/$SHA" "$REF_OUTDIR/$SAFE_REF.tmp"
+	    mv --no-target-directory -- "$REF_OUTDIR/$SAFE_REF.tmp" "$REF_OUTDIR/$SAFE_REF"
+  	fi
+    fi
+done
+
+target=`cat ../rsync-target`
+target_host=`cat ../rsync-target | sed 's/:.*//'`
+target_dir=`cat ../rsync-target | sed 's/.*://'`
+echo "rsync target host $target_host dir $target_dir"
+
+# remove refs symlinks that haven't been touched in 48 hours; as the
+# above will always touch everything, they are guaranteed fresh
+find "$REF_OUTDIR" -mindepth 1 -maxdepth 1 -mtime +1  \
+| while read old ; do
+    ref=`echo $old | sed 's/.*\///'`
+    echo "removing old ref $ref"
+    rm $old
+done
+
+# clean temp output dirs; since there cannot be a build running in
+# parallel with us, all tmp files are stale
+find "$SHA_OUTDIR" -mindepth 1 -maxdepth 1 -name '*.tmp' -print0 \
+| xargs -0 --no-run-if-empty rm -rf --
+
+# rsync --delete on the refs, so that stale refs on the target are
+# removed.  remove remote sha1 dirs that are stale.
+if [ -n "$target" ]; then
+    echo "removing old refs"
+    rsync -auv --delete -e "ssh -i ../rsync-key -o StrictHostKeyChecking=no" \
+	"$REF_OUTDIR/" $target/ref
+
+    # touch any active sha1 dirs, and remove any older than 2 days.
+    echo "removing old builds"
+    ssh -i ../rsync-key -o StrictHostKeyChecking=no $target_host \
+	touch $target_dir/ref/\*/. \; \
+	find $target_dir/sha1 -mindepth 1 -maxdepth 1 -mtime +1 \| \
+	xargs --no-run-if-empty -- rm -rfv --
+fi
