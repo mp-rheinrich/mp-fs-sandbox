@@ -154,6 +154,7 @@ Recommendations:
 
 ROADMAP:
   - http://www.inktank.com/about-inktank/roadmap/
+  - http://ceph.com/docs/master/release-notes/
 
 
 
