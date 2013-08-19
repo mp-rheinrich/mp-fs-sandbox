@@ -59,3 +59,16 @@ Pitfalls:
 
 Measuring Pitfalls:
   http://www.gluster.org/2013/07/performance-measurement-pitfalls/
+
+
+## VIDEOS:
+    Demystifying Gluster - GlusterFS For SysAdmins
+    http://www.youtube.com/watch?v=HkBndZOcEA0
+
+
+
+
+
+GLUSTER TERMS:
+  - DAS - direct attached storage
+  - JBOD - just a bunch of disks
