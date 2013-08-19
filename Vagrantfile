@@ -20,9 +20,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   vb.customize ["modifyvm", :id, "--memory", "1024"]
   # end
 
+  # config.vm.network :forwarded_port, {:guest => 4567, :host => 4567, :id => "dashboard", :auto_correct => true}
+  # config.vm.network :forwarded_port, {:guest => 5555, :host => 5555, :id => "riemann", :auto_correct => true, :protocol => "udp"}
 
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file  = "site.pp"
-  end
+
+  config.vm.provision :shell, :path => "shell/bootstrap.sh"
 end
