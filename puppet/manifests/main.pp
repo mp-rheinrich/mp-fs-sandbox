@@ -6,12 +6,3 @@ Stage['first'] -> Stage['main'] -> Stage['last']
 
 import 'basic.pp'
 import 'nodes.pp'
-
-class{'basic':
-  stage => first
-}
-
-
-# Wierd apt::ppa needs this declaration
-class { 'apt::update':}
-class { 'apt':}

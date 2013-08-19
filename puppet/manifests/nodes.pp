@@ -1,13 +1,24 @@
-# node default{
-#   class{"glusterfs":}
-# }
+class common{
+  class{'basic':
+    stage => first
+  }
 
-
-node "server1" {
-  file{"/tmp/server1":}
+  # Wierd apt::ppa needs this declaration
+  class { 'apt::update':}
+  class { 'apt':}
+  class { 'resolv':}
 }
 
+# node default{
+#   #class{"glusterfs":}
+# }
 
-node "server2" {
-  file{"/tmp/server2":}
+node "glusterserver1" {
+  class{"common":}
+  -> file{"/tmp/glusterserver1": ensure => present}
+}
+
+node "glusterserver2" {
+  class{"common":}
+  -> file{"/tmp/glusterserver2": ensure => present}
 }
