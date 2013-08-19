@@ -1,0 +1,29 @@
+ceph-deploy (1.2.1-1) precise; urgency=low
+
+  * New upstream release 
+
+ -- Gary Lowell <gary.lowell@inktank.com>  Thu, 15 Aug 2013 15:19:33 -0700
+
+ceph-deploy (1.2-1) precise; urgency=low
+
+  * New upstream release 
+
+ -- Gary Lowell <gary.lowell@inktank.com>  Mon, 12 Aug 2013 16:59:09 -0700
+
+ceph-deploy (1.1-1) precise; urgency=low
+
+  * New upstream release 
+
+ -- Gary Lowell <gary.lowell@inktank.com>  Tue, 18 Jun 2013 11:07:00 -0700
+
+ceph-deploy (1.0-1) stable; urgency=low
+
+  * New upstream release
+
+ -- Gary Lowell <gary.lowell@inktank.com>  Fri, 24 May 2013 11:57:40 +0800
+
+ceph-deploy (0.0.1-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Gary Lowell <gary.lowell@inktank.com>  Mon, 10 Mar 2013 18:38:40 +0800
