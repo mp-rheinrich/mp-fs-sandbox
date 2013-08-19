@@ -1,0 +1,13 @@
+This repository contains a couple of scripts which can help you backup metadata
+from a running Ceph cluster.
+
+In the end RADOS objects are nothing more then regular files on the OSD's filesystem.
+
+Should for any reason, while very unlikely, your complete Ceph cluster stop working you
+can reconstruct RBD images from OSDs their harddrives if you have the right meta information.
+
+Running "rbd-meta-backup" on a regular basis will allow you to do so.
+
+The ceph-meta-backup tool will backup information like monitor maps, osdmaps and crushmaps so
+you can use this information to restore after a user error. Having a old version of your crushmap
+can be useful when you import a new crushmap and it contains an error.

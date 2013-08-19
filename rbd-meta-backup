@@ -1,0 +1,27 @@
+#!/bin/bash
+
+SUFFIX=$(date +'%Y-%m-%d_%H-%M')
+
+TEMP_DIR="/tmp/rbd-meta-backup-$SUFFIX"
+
+mkdir $TEMP_DIR
+
+for pool in $(rados lspools); do
+    images=$(rbd -p $pool ls 2>/dev/null)
+    numimages=$(echo $images|sed '/^$/d'|wc -l)
+    if [ "$numimages" -eq 0 ]; then
+        continue;
+    fi
+
+    mkdir $TEMP_DIR/$pool
+    echo $images > $TEMP_DIR/$pool/images
+
+    rados -p $pool get rbd_directory $TEMP_DIR/$pool/rbd_directory
+
+    for image in $(echo $images); do
+        rbd -p $pool info $image > $TEMP_DIR/$pool/$image.rbd
+    done
+
+done
+
+tar --directory=/tmp czf rbd-meta-backup-$SUFFIX.tar.gz $TEMP_DIR
