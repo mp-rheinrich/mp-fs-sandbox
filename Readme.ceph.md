@@ -175,3 +175,7 @@ ROADMAP:
 
 ### Terminlogy
 - OSD: Object Storage Node
+
+
+### Testing:
+  - https://github.com/enovance/puppet-ceph (includes Vagrant file to run Ceph!)
