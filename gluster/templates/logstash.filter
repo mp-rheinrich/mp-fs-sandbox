@@ -1,0 +1,27 @@
+  grok {
+    pattern => "%{GLUSTERLOG}"
+    patterns_dir => "/opt/logstash/patterns"
+    type => "glusterfs"
+  }
+  grok {
+    pattern => "%{GLUSTERLOG}"
+    patterns_dir => "/opt/logstash/patterns"
+    type => "glusterfsbrick"
+  }
+  grep {
+    match => [ "timestamp", ".*" ]
+    type => "glusterfs"
+  }
+  grep {
+    match => [ "timestamp", ".*" ]
+    type => "glusterfsbrick"
+  }
+  date {
+    timestamp => "yyyy-MM-dd HH:mm:ss.SSSSSS"
+    type => "glusterfs"
+  }
+  date {
+    timestamp => "yyyy-MM-dd HH:mm:ss.SSSSSS"
+    type => "glusterfsbrick"
+  }
+  

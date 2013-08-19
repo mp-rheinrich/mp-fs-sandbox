@@ -1,0 +1,15 @@
+  file {
+    path => "/var/log/glusterfs/*.log"
+    sincedb_path => "/var/tmp/.glusterfs.sincedb"
+    format => "plain"
+    tags => [ "<%= myhostname -%>.<%= envdomainname -%>", "glusterfstag" ]
+    type => "glusterfs"
+  }
+  file {
+    path => "/var/log/glusterfs/bricks/*.log"
+    sincedb_path => "/var/tmp/.glusterfs.bricks.sincedb"
+    format => "plain"
+    tags => [ "<%= myhostname -%>.<%= envdomainname -%>", "glusterfsbricktag" ]
+    type => "glusterfsbrick"
+  }
+  

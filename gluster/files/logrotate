@@ -1,0 +1,18 @@
+#
+# PUPPET MANAGES THIS FILE
+#
+
+/var/log/glusterfs/*.log {
+        daily
+        rotate 14
+        compress
+        copytruncate
+}
+
+/var/log/glusterfs/bricks/*.log {
+        daily
+        rotate 14
+        compress
+        copytruncate
+}
+
