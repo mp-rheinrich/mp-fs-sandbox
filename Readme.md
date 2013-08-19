@@ -55,3 +55,7 @@ Pitfalls:
     trigger auto-healing after it
   can be avoided:
     Quorum Enforcement
+
+
+Measuring Pitfalls:
+  http://www.gluster.org/2013/07/performance-measurement-pitfalls/
