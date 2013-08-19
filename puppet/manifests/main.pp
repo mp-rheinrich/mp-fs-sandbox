@@ -10,3 +10,8 @@ import 'nodes.pp'
 class{'basic':
   stage => first
 }
+
+
+# Wierd apt::ppa needs this declaration
+class { 'apt::update':}
+class { 'apt':}
