@@ -7,19 +7,15 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64"
 
-
-
-
-
-  config.vm.define :server1 do |server|
-    server.vm.hostname = "server1"
+  config.vm.define :glusterserver1 do |server|
+    server.vm.hostname = "glusterserver1"
     server.vm.box      = "precise64"
     server.vm.provision :shell, :path => "shell/bootstrap.sh"
     server.vm.network :private_network, ip: "192.168.33.10"
   end
 
-  config.vm.define :server2 do |server|
-    server.vm.hostname = "server2"
+  config.vm.define :glusterserver2 do |server|
+    server.vm.hostname = "glusterserver2"
     server.vm.box      = "precise64"
     server.vm.provision :shell, :path => "shell/bootstrap.sh"
     server.vm.network :private_network, ip: "192.168.33.11"
