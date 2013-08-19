@@ -167,3 +167,11 @@ ROADMAP:
     - http://www.inktank.com/resources/
     - http://www.inktank.com/resource/type/videos/
     - http://www.inktank.com/wp-content/uploads/2013/07/Ceph_Overview_V5.2_interactive.pdf
+### Slides:
+  - [The End of RAID as You Know It with Ceph Replication](http://public.brighttalk.com/resource/core/11549/raid_replication_webinar_slides_17677.pdf)
+  -
+
+
+
+### Terminlogy
+- OSD: Object Storage Node
