@@ -1,0 +1,23 @@
+[global]
+fsid = <%= fsid %>
+mon initial members = <%= monitors_hostname %>
+mon host = <%= monitors_addr %>
+osd journal size = <%= journal_size_mb %>
+filestore xattr use omap = true
+auth supported = cephx
+osd crush chooseleaf type = 0
+
+osd pool default size = 2
+sd pool default pg num = 192
+sd pool default pgp num = 192
+
+[osd]
+filestore max sync interval = 5
+osd op threads = 8
+filestore op threads = 8
+filestore queue max ops = 50000
+filestore queue max bytes = 1024000000
+journal queue max ops = 50000
+journal queue max bytes = 1024000000
+journal max write bytes = 512000000
+journal max write entries = 50000
