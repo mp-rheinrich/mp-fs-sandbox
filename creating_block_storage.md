@@ -15,9 +15,6 @@ http://ceph.com/docs/next/rados/operations/pools/
    $ ceph osd pool create first-pool 70
 
 
-
-
-
 http://ceph.com/docs/next/rbd/rados-rbd-cmds/
 
 
@@ -33,12 +30,6 @@ http://ceph.com/docs/next/rbd/rados-rbd-cmds/
 
 
 
-
-
-
-
-
-
   rbd create foo --size 1024
   rbd create foo --size 1024 --pool first-pool
 
@@ -50,3 +41,4 @@ http://ceph.com/docs/next/rbd/rados-rbd-cmds/
 
 
   rbd resize --image foo --size 2048
+
