@@ -1,7 +1,3 @@
-### Testing for Distributed File Systems:
-- http://ingoebel.de/2012_ingoebel_verteilte_dateisysteme_systemmgmt_hdm.pdf
-
-
 
 
 
@@ -16,3 +12,7 @@
     $ vagrant up
 
 
+
+
+### Some general links about (distributed) FS testing:
+  - http://ingoebel.de/2012_ingoebel_verteilte_dateisysteme_systemmgmt_hdm.pdf
