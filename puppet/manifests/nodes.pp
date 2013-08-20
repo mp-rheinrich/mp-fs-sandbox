@@ -20,3 +20,18 @@ node "glusterserver2" {
   -> file{"/tmp/glusterserver2": ensure => present}
   -> class{"glusterfs":}
 }
+
+node /ceph-mon/ {
+  class{"common":}
+  include ceph
+}
+
+node /ceph-osd/ {
+  class{"common":}
+  include ceph
+}
+
+node /ceph-mds/{
+  class{"common":}
+  include ceph
+}
