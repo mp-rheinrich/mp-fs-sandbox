@@ -6,7 +6,7 @@
 ### Tutorials:
   - http://pve.proxmox.com/wiki/Storage:_Ceph
   - Ceph Deploy:  [Installing ceph with ceph-deploy](http://dachary.org/?p=1971)
-  - [RADOS object store and Ceph FS](http://www.admin-magazine.com/HPC/Articles/RADOS-and-Ceph-Part-2)
+  - [RADOS object store and Ceph FS](http://www.admin-magazine.com/HPC/Articles/The-RADOS-Object-Store-and-Ceph-Filesystem/(language)/eng-US), [Part2](http://www.admin-magazine.com/HPC/Articles/RADOS-and-Ceph-Part-2)
 
 
 ### Videos:
