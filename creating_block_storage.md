@@ -45,4 +45,8 @@ http://ceph.com/docs/next/rbd/rados-rbd-cmds/
 
   rbd --image foo info
 
-  rbd --image {image-name} -p {pool-name} info
+  rbd --image foo -p first-pool info
+
+
+
+  rbd resize --image foo --size 2048
