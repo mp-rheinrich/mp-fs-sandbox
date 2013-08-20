@@ -49,6 +49,7 @@ Advanced Virtual Block Device
   ###### With hardware specs and clear illustrations
   - [DreamObjects Case Study Webinar](http://www.youtube.com/watch?v=G4twIKkhWF0)
   - [Slides for DreamObjects](http://www.slideshare.net/Inktank_Ceph/20121102-dreamobjects)
+  - [GoPC - upgrading Zimbra email storage to Ceph](http://www.graemespeak.com/2013/05/05/supercomputing-infrastructure-to-support-gopc-rainmaker-cloud/)
 
 
   - [CEPH STORAGE FOR DELL OPENSTACK VIRTUAL INFRASTRUCTURES](http://objects.dreamhost.com/inktank-dell/Ceph%20Storage%20for%20Dell%20OpenStack%20Virtual%20Infrastructures%20v0.7.pdf)
