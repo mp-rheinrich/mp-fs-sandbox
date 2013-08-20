@@ -1,3 +1,14 @@
+### Tutorials:
+  - http://pve.proxmox.com/wiki/Storage:_Ceph
+
+  - Ceph Deploy:  [Installing ceph with ceph-deploy](http://dachary.org/?p=1971)
+
+
+
+
+
+
+
 [Linux.conf.au 2013] - grand distributed storage debate glusterfs and Ceph
 http://www.youtube.com/watch?v=JfRqpdgoiRQ
 
@@ -159,8 +170,6 @@ ROADMAP:
 
 
 
-
-
 ### Commercial Support
 
     - http://www.inktank.com/what-is-ceph/
@@ -171,11 +180,6 @@ ROADMAP:
 ### Slides:
   - [The End of RAID as You Know It with Ceph Replication](http://public.brighttalk.com/resource/core/11549/raid_replication_webinar_slides_17677.pdf)
   -
-
-
-
-### Terminlogy
-- OSD: Object Storage Node
 
 
 ### Testing:

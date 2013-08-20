@@ -1,43 +1,44 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
-
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+Vagrant.configure("2") do |config|
   config.vm.box = "precise64"
 
-  config.vm.define :glusterserver1 do |server|
-    server.vm.hostname = "glusterserver1"
-    server.vm.box      = "precise64"
-    server.vm.provision :shell, :path => "shell/bootstrap.sh"
-    server.vm.network :private_network, ip: "192.168.33.10"
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
+    vb.customize ["modifyvm", :id, "--nictype2", "virtio"]
+    vb.customize ["modifyvm", :id, "--nictype3", "virtio"]
   end
 
-  config.vm.define :glusterserver2 do |server|
-    server.vm.hostname = "glusterserver2"
-    server.vm.box      = "precise64"
-    server.vm.provision :shell, :path => "shell/bootstrap.sh"
-    server.vm.network :private_network, ip: "192.168.33.11"
+  (0..1).each do |i|
+    config.vm.define "mon#{i}" do |mon|
+      mon.vm.hostname = "ceph-mon#{i}.test"
+      mon.vm.network :private_network, ip: "192.168.251.1#{i}"
+      mon.vm.network :private_network, ip: "192.168.252.1#{i}"
+      mon.vm.provision :shell, :path => "shell/mon.sh"
+    end
   end
 
+  (0..1).each do |i|
+    config.vm.define "osd#{i}" do |osd|
+      osd.vm.hostname = "ceph-osd#{i}.test"
+      osd.vm.network :private_network, ip: "192.168.251.10#{i}"
+      osd.vm.network :private_network, ip: "192.168.252.10#{i}"
+      osd.vm.provision :shell, :path => "shell/osd.sh"
+      (0..1).each do |d|
+        osd.vm.provider :virtualbox do |vb|
+          vb.customize [ "createhd", "--filename", "disk-#{i}-#{d}", "--size", "5000" ]
+          vb.customize [ "storageattach", :id, "--storagectl", "SATA Controller", "--port", 3+d, "--device", 0, "--type", "hdd", "--medium", "disk-#{i}-#{d}.vdi" ]
+        end
+      end
+    end
+  end
 
-
-  # config.vm.network :forwarded_port, guest: 80, host: 8080
-  # config.vm.network :private_network, ip: "192.168.33.10"
-  # config.vm.network :public_network
-  # config.ssh.forward_agent = true
-  # config.vm.synced_folder "../data", "/vagrant_data"
-
-  # config.vm.provider :virtualbox do |vb|
-  #   # Don't boot with headless mode
-  #   vb.gui = true
-  #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-  # end
-
-  # config.vm.network :forwarded_port, {:guest => 4567, :host => 4567, :id => "dashboard", :auto_correct => true}
-  # config.vm.network :forwarded_port, {:guest => 5555, :host => 5555, :id => "riemann", :auto_correct => true, :protocol => "udp"}
-  # config.vm.provision :shell, :path => "shell/bootstrap.sh"
+  (0..1).each do |i|
+    config.vm.define "mds#{i}" do |mds|
+      mds.vm.hostname = "ceph-mds#{i}.test"
+      mds.vm.network :private_network, ip: "192.168.251.15#{i}"
+      mds.vm.provision :shell, :path => "shell/mds.sh"
+    end
+  end
 end
