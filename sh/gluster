@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-
+echo "switching to GLUSTERFS"
 rm -rf Vagrantfile
 ln -s Vagrantfile.glusterfs Vagrantfile
