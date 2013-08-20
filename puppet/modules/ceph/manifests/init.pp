@@ -1,7 +1,10 @@
 class ceph{
   class{"ceph::package_sources":}
+  -> class{"ceph::packages":}
   -> class{"ceph::ssh_test_keys":}
+  -> class{"ceph::ceph_deploy":}
 }
+
 
 class ceph::package_sources{
   exec{"add ceph key":
@@ -21,6 +24,9 @@ class ceph::package_sources{
 }
 
 
+class ceph::packages{
+  package{["ceph", "ceph-mds", "ceph-common", "ceph-fs-common", "gdisk"]: ensure => present}
+}
 
 class ceph::ssh_test_keys{
   file{"/root/.ssh": ensure => directory}
@@ -43,9 +49,8 @@ class ceph::ssh_test_keys{
     mode    => 0600,
   }
 
-  ## /etc/ssh/sshd_config
   -> exec{"allow root and passwordless ssh":
     command => "sed 's/\PermitEmptyPasswords\s\+no/PermitEmptyPasswords yes/g' /etc/ssh/sshd_config|tee /etc/ssh/sshd_config && /etc/init.d/ssh restart",
-    unless  => "grep -E  PermitEmptyPasswords\\s\+yes  /etc/ssh/sshd_config"
+    unless  => "grep -E  PermitEmptyPasswords\\\s\\+yes  /etc/ssh/sshd_config"
   }
 }
