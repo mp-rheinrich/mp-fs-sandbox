@@ -34,3 +34,21 @@ Installation on Ubuntu:
     ## Activate OSD
     ## ceph-deploy osd activate HOST:DIR[:JOURNAL] [...]
     $ ceph-deploy osd activate ceph-osd0:/dev/sdb ceph-osd1:/dev/sdb
+
+
+
+    ## Create MDS daemons
+    ## ceph-deploy mds create {host-name}[:{daemon-name}] [{host-name}[:{daemon-name}] ...]
+    $ ceph-deploy mds create ceph-mds0 ceph-mds1
+
+
+
+
+    ## allow all to administrate
+      ceph-deploy admin ceph-osd0
+      ceph-deploy admin ceph-osd1
+      ceph-deploy admin ceph-mon0
+      ceph-deploy admin ceph-mon1
+      ceph-deploy admin ceph-mds0
+      ceph-deploy admin ceph-mds1
+
