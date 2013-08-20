@@ -1,8 +1,9 @@
 ## Glusterfs
 
 
-This repository is a playground to test the suitability of GlusterFS as Media Storage for big video files.
-
+## GLUSTER TERMS:
+  - DAS - direct attached storage
+  - JBOD - just a bunch of disks
 
 
 ## Basic Info
@@ -28,14 +29,14 @@ This repository is a playground to test the suitability of GlusterFS as Media St
       - [Gluster for Geeks: Performance Tuning Tips & Tricks](http://de.slideshare.net/Gluster/gluster-for-geeks-performance-tuning-tips-tricks)
 
 
-## Rather detailed critical reviews:
+### Rather detailed critical reviews:
     - http://sysconfig.org.uk/2011/07/glusterfs-a-workhorse-that-needs-to-be-tamed/
     - http://www.gluster.org/community/documentation/index.php/Basic_Gluster_Troubleshooting
 
 
 
 
-Why GlusterFS would be most secure bet for Video Hosting?
+### Why GlusterFS would be most secure bet for Video Hosting?
 
   - Brightcove:
     - Media Serving
@@ -47,7 +48,7 @@ Why GlusterFS would be most secure bet for Video Hosting?
 
 
 
-Pitfalls:
+### Pitfalls:
   Split-Brain Syndrome:
   client writes to multiple copies of files
   no automatic fix
@@ -57,18 +58,10 @@ Pitfalls:
     Quorum Enforcement
 
 
-Measuring Pitfalls:
+### Measuring Pitfalls:
   http://www.gluster.org/2013/07/performance-measurement-pitfalls/
 
 
 ## VIDEOS:
-    Demystifying Gluster - GlusterFS For SysAdmins
-    http://www.youtube.com/watch?v=HkBndZOcEA0
+  - [Demystifying Gluster - GlusterFS For SysAdmins](http://www.youtube.com/watch?v=HkBndZOcEA0)
 
-
-
-
-
-GLUSTER TERMS:
-  - DAS - direct attached storage
-  - JBOD - just a bunch of disks
