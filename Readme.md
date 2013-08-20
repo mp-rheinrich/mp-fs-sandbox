@@ -13,6 +13,7 @@
 
 ### Some general links about (distributed) FS testing:
   - http://ingoebel.de/2012_ingoebel_verteilte_dateisysteme_systemmgmt_hdm.pdf
+  - http://www.netways.de/uploads/media/Fabrizio_Manfred_Use_Distributed_Filesystem_as_a_Storage_Tier__ENG_.pdf
 
 
 ### Benchmarks:

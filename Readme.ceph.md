@@ -13,6 +13,9 @@
 
   - [[Linux.conf.au 2013] - grand distributed storage debate glusterfs and Ceph](http://www.youtube.com/watch?v=JfRqpdgoiRQ)
   - [[Linux.conf.au 2013] - Ceph: Managing A Distributed Storage System At Scale](http://www.youtube.com/watch?v=90nvIlBqwXg)
+  - [Scaling Storage to the Cloud and Beyond with Ceph, 2012.10](http://vimeo.com/50620695)
+  - http://www.shainmiley.com/wordpress/2013/06/05/ceph-overview-with-videos/
+  - [FLOSS Weekly 250: Ceph](http://www.podcast.tv/video-episodes/floss-weekly-250-ceph-22584995.html)
 
 
 ### recursive accounting
@@ -106,6 +109,7 @@ CRUSH algorithm:
      ->
     DIRTY LITTLE SECRET:
       - a single bug inside your software could erase your whole data set
+  - http://ceph.com/docs/master/rados/configuration/filesystem-recommendations/
 
 ## ROADMAP:
   - http://www.inktank.com/about-inktank/roadmap/
@@ -124,6 +128,7 @@ CRUSH algorithm:
 
 ### Slides:
   - [The End of RAID as You Know It with Ceph Replication](http://public.brighttalk.com/resource/core/11549/raid_replication_webinar_slides_17677.pdf)
+  - [Block Storage For VMs With Ceph](http://de.slideshare.net/xen_com_mgr/block-storage-for-vms-with-ceph)
 
 
 
@@ -170,3 +175,10 @@ Summarized by David Klann (dklann@linux.com)
   command line of the various tools.
 
 
+
+
+
+Loud thinking...
+  - because the CephFS implementation is not ready for prouduction, we should use Block Storage
+    - By striping images across the cluster, Ceph improves read access performance for large block device images. - See more at: http://ceph.com/ceph-storage/block-storage/#sthash.kwkwlGt0.dpuf
+    - bringing Ceph’s virtually unlimited storage to KVMs running on your Ceph clients. - See more at: http://ceph.com/ceph-storage/block-storage/#sthash.kwkwlGt0.dpuf
