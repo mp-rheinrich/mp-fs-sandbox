@@ -10,8 +10,8 @@
 
 ### Videos:
 
-    - [[Linux.conf.au 2013] - grand distributed storage debate glusterfs and Ceph](http://www.youtube.com/watch?v=JfRqpdgoiRQ)
-    - [[Linux.conf.au 2013] - Ceph: Managing A Distributed Storage System At Scale](http://www.youtube.com/watch?v=90nvIlBqwXg)
+  - [[Linux.conf.au 2013] - grand distributed storage debate glusterfs and Ceph](http://www.youtube.com/watch?v=JfRqpdgoiRQ)
+  - [[Linux.conf.au 2013] - Ceph: Managing A Distributed Storage System At Scale](http://www.youtube.com/watch?v=90nvIlBqwXg)
 
 
 ### recursive accounting
