@@ -21,7 +21,6 @@ grep -q "ceph-mds0" /etc/hosts || echo "192.168.251.150 ceph-mds0 ceph-mds0.test
 grep -q "ceph-mds1" /etc/hosts || echo "192.168.251.151 ceph-mds1 ceph-mds1.test" >> /etc/hosts
 
 
-echo "something"
 # aptitude update
 
 # Install ruby 1.8 and ensure it is the default
