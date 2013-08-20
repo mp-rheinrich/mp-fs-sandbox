@@ -30,12 +30,39 @@ Advanced Virtual Block Device
 
 
 ### Videos:
-
+  - [Linux - Ceph object storage block storage file system replication mass](http://www.youtube.com/watch?feature=player_detailpage&v=C3lxGuAWEWU&t=2385) -> with actual real expanations and a small workshop, starts at about 38 min.
   - [[Linux.conf.au 2013] - grand distributed storage debate glusterfs and Ceph](http://www.youtube.com/watch?v=JfRqpdgoiRQ)
   - [[Linux.conf.au 2013] - Ceph: Managing A Distributed Storage System At Scale](http://www.youtube.com/watch?v=90nvIlBqwXg)
   - [Scaling Storage to the Cloud and Beyond with Ceph, 2012.10](http://vimeo.com/50620695)
   - http://www.shainmiley.com/wordpress/2013/06/05/ceph-overview-with-videos/
   - [FLOSS Weekly 250: Ceph](http://www.podcast.tv/video-episodes/floss-weekly-250-ceph-22584995.html)
+  - [Petabyte-Storage mit Ceph - Martin Gerhard Loschwitz](http://www.youtube.com/watch?v=E4yWs0EjkeQ), [Slides](http://www.heinlein-support.de/sites/default/files/slac-2013_storage-mit-ceph_vortrag.pdf)
+  - [Ceph at Media Entertainment and Scientific Storage Meetup](http://www.youtube.com/watch?v=BBOBHMvKfyc), [Slides](http://www.slideshare.net/openstack/storing-vms-with-cinder-and-ceph-rbdpdf)
+
+  --> big block devises: [](http://www.youtube.com/watch?feature=player_detailpage&v=BBOBHMvKfyc&t=1193)
+    -> even without virtualization, use RBD as BIG DISK
+    -> thin-provisioned, instantly available, 10 TB disk (e.g)
+  - MDS want to have plenty of RAM
+
+
+## Case Studies
+  ###### With hardware specs and clear illustrations
+  - [DreamObjects Case Study Webinar](http://www.youtube.com/watch?v=G4twIKkhWF0)
+  - [Slides for DreamObjects](http://www.slideshare.net/Inktank_Ceph/20121102-dreamobjects)
+
+
+  - [CEPH STORAGE FOR DELL OPENSTACK VIRTUAL INFRASTRUCTURES](http://objects.dreamhost.com/inktank-dell/Ceph%20Storage%20for%20Dell%20OpenStack%20Virtual%20Infrastructures%20v0.7.pdf)
+    - 5.1 Balance Hardware  Capabilities  (CPU, Memory, Disk, Network)
+
+
+### Slides:
+  - [The End of RAID as You Know It with Ceph Replication](http://public.brighttalk.com/resource/core/11549/raid_replication_webinar_slides_17677.pdf)
+  - [Block Storage For VMs With Ceph](http://de.slideshare.net/xen_com_mgr/block-storage-for-vms-with-ceph)
+
+
+## Further links for ceph administration:
+  - http://docs.flexiant.com/display/DOCS/Integrating+Ceph+with+Flexiant+Cloud+Orchestrator
+
 
 
 ### recursive accounting
@@ -142,11 +169,6 @@ Advanced Virtual Block Device
 
 
 
-### Slides:
-  - [The End of RAID as You Know It with Ceph Replication](http://public.brighttalk.com/resource/core/11549/raid_replication_webinar_slides_17677.pdf)
-  - [Block Storage For VMs With Ceph](http://de.slideshare.net/xen_com_mgr/block-storage-for-vms-with-ceph)
-
-
 ### a summary for Ceph:
 Ceph: Managing a Distributed Storage System at Scale, Sage Weil, Inktank
 Summarized by David Klann (dklann@linux.com)
@@ -188,7 +210,6 @@ Summarized by David Klann (dklann@linux.com)
   the purpose of testing new functionality.
   The Ceph configuration philosophy is to minimize local configuration. Options may be specified in configuration files and on the
   command line of the various tools.
-
 
 
 
