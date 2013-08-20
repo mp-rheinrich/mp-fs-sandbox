@@ -1,3 +1,8 @@
+### Terminology
+  - http://ceph.com/docs/next/glossary/
+
+
+
 ### Tutorials:
   - http://pve.proxmox.com/wiki/Storage:_Ceph
 
