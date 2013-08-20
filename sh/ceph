@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
 
-rm Vagrantfile
+rm -rf Vagrantfile
 ln -s Vagrantfile.ceph Vagrantfile
