@@ -52,3 +52,13 @@ Installation on Ubuntu:
       ceph-deploy admin ceph-mds0
       ceph-deploy admin ceph-mds1
 
+
+
+    ## Mounting FS
+      $ mkdir -p /mnt/mycephfs
+      ## plaintext secret
+      $ mount.ceph ceph-mon0,ceph-mon1:/ /mnt/mycephfs -o name=admin,secret=AQC3aRNSWCvNDhAAm1iHcWooMldZHVcE4VLyhg==
+
+      ## read it from keyring
+      $ mount.ceph ceph-mon0,ceph-mon1:/ /mnt/mycephfs -o name=admin,secret=`cat /etc/ceph/ceph.client.admin.keyring|grep key| awk '{print $3}'`
+
