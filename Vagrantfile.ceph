@@ -1,8 +1,13 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+## pls install vagrant-cachier before running
+## $ vagrant plugin install vagrant-cachier
+
 Vagrant.configure("2") do |config|
   config.vm.box = "precise64"
+  config.cache.enable :apt
+  config.cache.enable_nfs  = true
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--nictype1", "virtio"]
