@@ -27,6 +27,10 @@ Advanced Virtual Block Device
   - http://pve.proxmox.com/wiki/Storage:_Ceph
   - Ceph Deploy:  [Installing ceph with ceph-deploy](http://dachary.org/?p=1971)
   - [RADOS object store and Ceph FS](http://www.admin-magazine.com/HPC/Articles/The-RADOS-Object-Store-and-Ceph-Filesystem/(language)/eng-US), [Part2](http://www.admin-magazine.com/HPC/Articles/RADOS-and-Ceph-Part-2), [Part3](http://www.admin-magazine.com/HPC/Articles/CephX-Encryption)
+  - [Crash Course in Ceph](http://www.anchor.com.au/blog/2012/09/a-crash-course-in-ceph/)
+  - [Deploying Ceph on EC2 with Juju](http://wiki.ceph.com/02Guides/Deploying_Ceph_with_Juju), [Juju charms](https://jujucharms.com/precise/ceph-14/#bws-readme)
+  - [Operational FAQ](http://wiki.ceph.com/03FAQs/02Operations_FAQ)
+
 
 
 ### Videos:
@@ -55,6 +59,8 @@ Advanced Virtual Block Device
   - [CEPH STORAGE FOR DELL OPENSTACK VIRTUAL INFRASTRUCTURES](http://objects.dreamhost.com/inktank-dell/Ceph%20Storage%20for%20Dell%20OpenStack%20Virtual%20Infrastructures%20v0.7.pdf)
     - 5.1 Balance Hardware  Capabilities  (CPU, Memory, Disk, Network)
 
+  - [Press](http://wiki.ceph.com/05Community/Press)
+
 
 ### Slides:
   - [The End of RAID as You Know It with Ceph Replication](http://public.brighttalk.com/resource/core/11549/raid_replication_webinar_slides_17677.pdf)
@@ -63,7 +69,6 @@ Advanced Virtual Block Device
 
 ## Further links for ceph administration:
   - http://docs.flexiant.com/display/DOCS/Integrating+Ceph+with+Flexiant+Cloud+Orchestrator
-
 
 
 ### recursive accounting
