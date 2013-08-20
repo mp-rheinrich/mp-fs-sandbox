@@ -2,6 +2,26 @@
   - http://ceph.com/docs/next/glossary/
 
 
+### Ceph innovations:
+- CRUSH data placement algorithm
+  - infrastructre aware and quickly adjusts to failures
+  - data location is computed rather than looked up
+  - enables clients to communicate directly with servers that store their data
+  - enables clients to perform  parallel IO for greatly enhanced throughput
+- Reliable Autonomic Distributed Object Storage
+   - storage devises assume complete responsibility for data integrity
+   - they operate independently, in parallel, without central choreography
+   - very efficient, very fast, very scalable
+CephFS Distributed MetaData Server
+  - Highly scaleable to large number of active/active  metadata servers and high throughput
+  - Highly reliable and available, with POSIX semantics and consistency guarantees
+  - Has both a FUSE client and a client fully integrated into the LINUX kernel
+
+Advanced Virtual Block Device
+  - Enterprise storage capabilities from utility server hardware
+  - Thin provisioned, Allocate-On-Write Snapshots, LUN cloning
+  - in the Linux kernel and integrated with OpenStack components
+
 
 ### Tutorials:
   - http://pve.proxmox.com/wiki/Storage:_Ceph
@@ -98,10 +118,6 @@
     - don't scale well
     - marry hardware and software
 
-
-CRUSH algorithm:
-  -
-
 ## Recommendations:
   - run Ceph on top of raw disks! (no RAID!)
   - http://www.youtube.com/watch?feature=player_detailpage&v=JfRqpdgoiRQ&t=2055
@@ -129,7 +145,6 @@ CRUSH algorithm:
 ### Slides:
   - [The End of RAID as You Know It with Ceph Replication](http://public.brighttalk.com/resource/core/11549/raid_replication_webinar_slides_17677.pdf)
   - [Block Storage For VMs With Ceph](http://de.slideshare.net/xen_com_mgr/block-storage-for-vms-with-ceph)
-
 
 
 ### a summary for Ceph:
