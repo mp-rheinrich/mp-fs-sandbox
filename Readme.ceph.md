@@ -67,6 +67,7 @@ Advanced Virtual Block Device
 ### Slides:
   - [The End of RAID as You Know It with Ceph Replication](http://public.brighttalk.com/resource/core/11549/raid_replication_webinar_slides_17677.pdf)
   - [Block Storage For VMs With Ceph](http://de.slideshare.net/xen_com_mgr/block-storage-for-vms-with-ceph)
+  - [Ceph Intro and Architectural Overview by Ross Turk, 2013/05](http://www.slideshare.net/buildacloud/ceph-intro-and-architectural-overview-by-ross-turk)
 
 
 ## Further links for ceph administration:
