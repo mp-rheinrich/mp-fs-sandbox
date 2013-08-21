@@ -25,7 +25,9 @@ Advanced Virtual Block Device
 
 ### Tutorials:
   - http://pve.proxmox.com/wiki/Storage:_Ceph
-  - Ceph Deploy:  [Installing ceph with ceph-deploy](http://dachary.org/?p=1971)
+  - Ceph Deploy:
+    - [Installing ceph with ceph-deploy](http://dachary.org/?p=1971)
+    - [deploying-ceph-with-ceph-deploy](http://ceph.com/howto/deploying-ceph-with-ceph-deploy/)
   - [RADOS object store and Ceph FS](http://www.admin-magazine.com/HPC/Articles/The-RADOS-Object-Store-and-Ceph-Filesystem/(language)/eng-US), [Part2](http://www.admin-magazine.com/HPC/Articles/RADOS-and-Ceph-Part-2), [Part3](http://www.admin-magazine.com/HPC/Articles/CephX-Encryption)
   - [Crash Course in Ceph](http://www.anchor.com.au/blog/2012/09/a-crash-course-in-ceph/)
   - [Deploying Ceph on EC2 with Juju](http://wiki.ceph.com/02Guides/Deploying_Ceph_with_Juju), [Juju charms](https://jujucharms.com/precise/ceph-14/#bws-readme)
