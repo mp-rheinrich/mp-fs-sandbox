@@ -16,10 +16,10 @@ Basic terms:
       - CRUSH map
     - also keep history of each state changes in the cluster, called epoch
 
-    - MDSs - Ceph Metadata Server
-      - store metadata for the Ceph FileSystem clients
-      - supports the basic POSIX commands like ls and find
-      - provide meta-data high-availability and scalability (multiple active MDSs)
+  - MDSs - Ceph Metadata Server
+    - store metadata for the Ceph FileSystem clients
+    - supports the basic POSIX commands like ls and find
+    - provide meta-data high-availability and scalability (multiple active MDSs)
 
 
 
