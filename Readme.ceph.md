@@ -49,6 +49,7 @@ Advanced Virtual Block Device
     -> even without virtualization, use RBD as BIG DISK
     -> thin-provisioned, instantly available, 10 TB disk (e.g)
   - MDS want to have plenty of RAM
+  - [Webinars](http://www.inktank.com/WEBINARS/)
 
 
 ## Case Studies
