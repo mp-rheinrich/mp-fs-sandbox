@@ -36,7 +36,7 @@ Advanced Virtual Block Device
 
 
 ### Videos:
-  - [Linux - Ceph object storage block storage file system replication mass](http://www.youtube.com/watch?feature=player_detailpage&v=C3lxGuAWEWU&t=2385) -> with actual real expanations and a small workshop, starts at about 38 min.
+  - [Linux - Ceph object storage block storage file system replication mass](http://www.youtube.com/watch?feature=player_detailpage&v=C3lxGuAWEWU&t=2385) -> with actual real explanations and a small workshop, starts at about 38 min.
   - [[Linux.conf.au 2013] - grand distributed storage debate glusterfs and Ceph](http://www.youtube.com/watch?v=JfRqpdgoiRQ)
   - [[Linux.conf.au 2013] - Ceph: Managing A Distributed Storage System At Scale](http://www.youtube.com/watch?v=90nvIlBqwXg)
   - [Scaling Storage to the Cloud and Beyond with Ceph, 2012.10](http://vimeo.com/50620695)
