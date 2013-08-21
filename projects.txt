@@ -10,3 +10,4 @@ https://github.com/gridcentric/ceph-salt-states.git
 https://github.com/valerytschopp/ceph-nagios-plugins.git
 https://github.com/dontalton/puppet-cephdeploy.git
 https://github.com/ceph/ceph-cookbooks.git
+https://github.com/fghaas/lca2013.git
